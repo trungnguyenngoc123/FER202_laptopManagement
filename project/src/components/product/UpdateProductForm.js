@@ -200,13 +200,13 @@ const UpdateProductForm = (props) => {
                             <div className="d-flex justify-content-center mt-4">
                                 <button
                                     type="button"
-                                    className="btn btn-secondary col-3"
+                                    className="btn btn-secondary col-6"
                                     style={{ marginRight: '20px' }}
                                     onClick={() => navigate(-1)}
                                 >
                                     Quay lại
                                 </button>
-                                <button type="submit" className="btn btn-primary col-3">
+                                <button type="submit" className="btn btn-primary col-6">
                                     Cập nhật sản phẩm
                                 </button>
                             </div>

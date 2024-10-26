@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import '../../App.css'
 const NavBarComponent = () => {
 	const accountName = localStorage.getItem('account_name');
 	const username_github = localStorage.getItem('username_github');
@@ -46,14 +46,18 @@ const NavBarComponent = () => {
 	};
 
 	const activeStyle = {
-		color: '#bb2d3b',
+		color: 'darkBlue',
 		fontWeight: 'bold',
+		borderBottom: '3px solid gold',
 	};
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<div className="container">
-					<div className="navbar-brand">Labtrack</div>
+					<Link className="navbar-brand" to='/'>
+
+						<img src='/images/logo-color.png' width={120}></img>
+					</Link>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -66,8 +70,8 @@ const NavBarComponent = () => {
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							<div className="nav-item">
 								<Link
-									className="nav-link"
-									style={location.pathname === '/labtrack/' ? activeStyle : {}}
+									className="nav-link nav-link1"
+									style={location.pathname === '/' ? activeStyle : {}}
 									to="/"
 								>
 									Danh sách sản phẩm
@@ -75,7 +79,7 @@ const NavBarComponent = () => {
 							</div>
 							<div className="nav-item">
 								<button
-									className="nav-link"
+									className="nav-link nav-link1"
 									style={location.pathname === '/labtrack/products' ? activeStyle : {}}
 									onClick={handleManageClick}
 								>
@@ -84,7 +88,7 @@ const NavBarComponent = () => {
 							</div>
 							<div className="nav-item">
 								<Link
-									className="nav-link"
+									className="nav-link nav-link1"
 									style={location.pathname === '/labtrack/about' ? activeStyle : {}}
 									to="/labtrack/about"
 								>

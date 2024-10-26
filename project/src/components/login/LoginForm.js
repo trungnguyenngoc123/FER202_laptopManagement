@@ -12,7 +12,7 @@ const LoginForm = () => {
         if (username.trim().length === 0) return false;
         if (password.trim().length === 0) return false;
 
-        const pattern = /\b[qQ][eE]\d{6}\b/i;
+        const pattern = /\b[dD][eE]\d{6}\b/i;
         return pattern.test(username);
     };
 
@@ -71,7 +71,7 @@ const LoginForm = () => {
                     <div className="col-12 col-md-8 col-lg-6 shadow-lg p-5">
                         <div className="mx-5">
                             <h6 className="display-6 mb-5 text-center">
-                                Đăng nhập LabTrack
+                                Đăng nhập vào HexTech
                             </h6>
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">

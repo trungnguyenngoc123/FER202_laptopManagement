@@ -13,7 +13,7 @@ const UpdateProductPage = () => {
         <div className="vh-100">
             <Suspense fallback={<LoadingComponent />}>
                 <NavBarComponent />
-                <UpdateProductForm id={Number(params.id)} />
+                <UpdateProductForm id={String(params.id)} />
             </Suspense>
         </div>
     );

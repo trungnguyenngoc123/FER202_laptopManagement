@@ -14,7 +14,7 @@ const ProductDetailPage = () => {
         <div className="vh-100">
             <Suspense fallback={<div>Loading...</div>}>
                 <NavBarComponent />
-                <ProductDetailForm id={Number(params.id)} />
+                <ProductDetailForm id={String(params.id)} />
             </Suspense>
         </div>
     );

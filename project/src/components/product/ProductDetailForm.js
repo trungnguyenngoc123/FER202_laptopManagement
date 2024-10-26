@@ -11,6 +11,7 @@ const ProductDetailForm = (props) => {
             .get(`http://localhost:3001/products/${props.id}`)
             .then((response) => {
                 setProduct(response.data);
+                console.log(response.data)
             })
             .catch((error) => {
                 console.error('There was an error!', error);
@@ -30,19 +31,17 @@ const ProductDetailForm = (props) => {
     };
     console.log(product.image);
     return (
-        <div className="container d-flex flex-column align-items-center justify-content-center mt-4">
+        <div className="container-fluid d-flex flex-column align-items-center justify-content-center mt-4">
             <h6 className="display-6 mb-4 text-center">Thông tin sản phẩm</h6>
-            <div className="container mt-5 w-75 shadow-lg py-5">
+            <div className="container-fluid mt-5 w-75 shadow-lg py-5">
                 <div className="row">
                     <div className="d-flex flex-column align-items-center justify-content-center col-lg-6 col-md-12">
                         <img
                             src={product.image}
-                            // src='https://cdn2.fptshop.com.vn/unsafe/384x0/filters:quality(100)/2023_8_14_638276090577856519_msiI-modern-14-c7m-221vn-r7-7730u-1.jpg'
                             alt="Product"
                             className="img-fluid"
-                            style={{ width: '500px', height: '500px' }}
+                            style={{ width: '100%', height: '500px' }}
                         />
-                        
                     </div>
                     <div className="col-lg-6 col-md-12">
                         <p className="mb-4 text-start h4">
