@@ -19,15 +19,15 @@ const ProductListTable = () => {
     }, []);
 
     const handleAddProduct = () => {
-        navigate('/labtrack/add-product');
+        navigate('/hextech/add-product');
     };
 
     const handleViewDetail = (id) => {
-        navigate(`/labtrack/detail-product/${id}`);
+        navigate(`/hextech/detail-product/${id}`);
     };
 
     const handleEdit = (id) => {
-        navigate(`/labtrack/update-product/${id}`);
+        navigate(`/hextech/update-product/${id}`);
     };
 
     const handleDelete = (id) => {
@@ -74,7 +74,8 @@ const ProductListTable = () => {
                 <table className="table align-middle mb-0 bg-white table-striped">
                     <thead className="bg-secondary">
                         <tr style={{ textAlign: 'center' }}>
-                            <th style={{ width: '5%' }}>#</th>
+                            <th style={{ width: '5%' }}>ID</th>
+                            <th>Image</th>
                             <th style={{ width: '20%' }}>Name</th>
                             <th style={{ width: '45%' }}>Description</th>
                             <th style={{ width: '10%', textAlign: 'center' }}>Price</th>
@@ -87,10 +88,14 @@ const ProductListTable = () => {
                             <tr key={product.id}>
                                 <td style={{ textAlign: 'center' }}>{index + 1}</td>
                                 <td>
+                                    <img src={product.image} width={50}></img>
+                                </td>
+                                <td>
                                     <div className="d-flex align-items-center">
                                         <p className="fw-bold mb-1">{product.name}</p>
                                     </div>
                                 </td>
+                                
                                 <td>
                                     <p className="fw-normal mb-1">{product.description}</p>
                                 </td>

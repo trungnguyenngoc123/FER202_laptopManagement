@@ -14,7 +14,6 @@ const NavBarComponent = () => {
 		if (accountName && username_github) {
 			axios
 				.get(`https://api.github.com/users/${username_github}`, {
-
 				})
 				.then((response) => {
 					console.log('GitHub API response:', response);
@@ -34,13 +33,13 @@ const NavBarComponent = () => {
 
 	const handleManageClick = () => {
 		if (accountName) {
-			navigate('/labtrack/products');
+			navigate('/hextech/products');
 		} else {
 			Swal.fire({
 				title: 'Vui lòng đăng nhập để tiếp tục!',
 				icon: 'question',
 			}).then(() => {
-				navigate('/labtrack/login');
+				navigate('/hextech/login');
 			});
 		}
 	};
@@ -55,7 +54,6 @@ const NavBarComponent = () => {
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<div className="container">
 					<Link className="navbar-brand" to='/'>
-
 						<img src='/images/logo-color.png' width={120}></img>
 					</Link>
 					<button
@@ -80,7 +78,7 @@ const NavBarComponent = () => {
 							<div className="nav-item">
 								<button
 									className="nav-link nav-link1"
-									style={location.pathname === '/labtrack/products' ? activeStyle : {}}
+									style={location.pathname === '/hextech/products' ? activeStyle : {}}
 									onClick={handleManageClick}
 								>
 									Quản lý sản phẩm
@@ -89,8 +87,8 @@ const NavBarComponent = () => {
 							<div className="nav-item">
 								<Link
 									className="nav-link nav-link1"
-									style={location.pathname === '/labtrack/about' ? activeStyle : {}}
-									to="/labtrack/about"
+									style={location.pathname === '/hextech/about' ? activeStyle : {}}
+									to="/hextech/about"
 								>
 									Giới thiệu
 								</Link>
@@ -116,12 +114,12 @@ const NavBarComponent = () => {
 									/>{' '}
 									{accountName}
 								</a>
-								<div className="dropdown-menu p-1">
+								<div className="dropdown-menu p-1 mx-5">
 									<div>
 										<button
 											onClick={() => {
 												localStorage.removeItem('account_name');
-												navigate('/labtrack/login');
+												navigate('/hextech/login');
 											}}
 											className="dropdown-item text-center"
 										>
@@ -132,7 +130,7 @@ const NavBarComponent = () => {
 							</div>
 						) : (
 							<div className="nav-item">
-								<Link className="nav-link" to="/labtrack/login">
+								<Link className="nav-link" to="/hextech/login">
 									Đăng nhập
 								</Link>
 							</div>

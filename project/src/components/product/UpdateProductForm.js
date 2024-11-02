@@ -32,7 +32,7 @@ const UpdateProductForm = (props) => {
                         icon: 'error',
                     }).then(() => {
                         dispatch(reset());
-                        navigate('/labtrack/products');
+                        navigate('/hextech/products');
                     });
                 }
             }
@@ -106,7 +106,7 @@ const UpdateProductForm = (props) => {
                     icon: 'success',
                 }).then(() => {
                     dispatch(reset());
-                    navigate(`/labtrack/detail-product/${id}`);
+                    navigate(`/hextech/detail-product/${id}`);
                 });
             }
         } catch (error) {
@@ -123,7 +123,6 @@ const UpdateProductForm = (props) => {
         <div className="container mt-5 shadow-lg py-5">
             <div className="mx-5">
                 <h6 className="display-6 mb-4 text-center">Cập nhật sản phẩm</h6>
-
                 <form onSubmit={handleSubmit}>
                     <div className="row">
                         <div className="col-lg-6 col-md-8 col-sm-12 mx-auto">

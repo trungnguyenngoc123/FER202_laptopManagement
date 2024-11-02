@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/labtrack/login',
+		path: '/hextech/login',
 		element: (
 			<Suspense fallback={<LoadingComponent />}>
 				<LoginPage />
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/labtrack/about',
+		path: '/hextech/about',
 		element: (
 			<Suspense fallback={<LoadingComponent />}>
 				<AboutPage />
@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/labtrack/products',
+		path: '/hextech/products',
 		element: (
 			<Suspense fallback={<LoadingComponent />}>
 				<ProductListPage />
@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/labtrack/add-product',
+		path: '/hextech/add-product',
 		element: (
 			<Suspense fallback={<LoadingComponent />}>
 				<AddProductPage />
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/labtrack/update-product/:id',
+		path: '/hextech/update-product/:id',
 		element: (
 			<Suspense fallback={<LoadingComponent />}>
 				<UpdateProductPage />
@@ -66,12 +66,12 @@ export const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/labtrack/detail-product/:id',
+		path: '/hextech/detail-product/:id',
 		element: (
 			<Suspense fallback={<LoadingComponent />}>
 				<ProductDetailPage />
 			</Suspense>
 		),
 	},
-	{ path: '/labtrack/*', element: <Error404 /> },
+	{ path: '/hextech/*', element: <Error404 /> },
 ]);

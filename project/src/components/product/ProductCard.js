@@ -29,7 +29,7 @@ const ProductCard = ({ id, name, description, price, currentPrice, image }) => {
     };
 
     const formatPrice = (price) => {
-        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ';
+        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ';//định dạng tiền việt
     };
 
     return (
@@ -71,7 +71,7 @@ const ProductCard = ({ id, name, description, price, currentPrice, image }) => {
                         </small>
                     </h5>
                     <Link
-                        to={`/labtrack/detail-product/${id}`}
+                        to={`/hextech/detail-product/${id}`}
                         className="btn btn-danger"
                     >
                         Thông tin chi tiết

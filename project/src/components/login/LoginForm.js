@@ -12,24 +12,70 @@ const LoginForm = () => {
         if (username.trim().length === 0) return false;
         if (password.trim().length === 0) return false;
 
-        const pattern = /\b[dD][eE]\d{6}\b/i;
-        return pattern.test(username);
+        // const pattern = /\b[dD][eE]\d{6}\b/i;
+        // return pattern.test(username);
+        return username;
     };
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     if (isValidated()) {
+    //         try {
+    //             const response = await axios.get(`http://localhost:3001/accounts`);
+
+    //             if (response.status === 200) {
+    //                 const account = response.data.find(
+    //                     (acc) =>
+    //                         acc.username === username &&
+    //                         acc.password === password
+    //                 );
+
+    //                 if (account) {
+    //                     Swal.fire({
+    //                         title: 'Đăng nhập thành công!',
+    //                         text: 'Chào mừng bạn đến với hệ thống quản lý laptop!',
+    //                         icon: 'success',
+    //                     }).then(() => {
+    //                         localStorage.setItem('account_name', account.name);
+    //                         localStorage.setItem('username_github', account.username_github);
+    //                         navigate('/');
+    //                     });
+    //                 } else {
+    //                     Swal.fire({
+    //                         icon: 'error',
+    //                         title: 'Đăng nhập thất bại',
+    //                         text: 'Mã số sinh viên hoặc mật khẩu không chính xác!',
+    //                     }).then(() => {
+    //                         navigate('/hextech/login');
+    //                     });
+    //                 }
+    //             }
+    //         } catch (error) {
+    //             console.error('Error fetching accounts:', error);
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'Lỗi hệ thống',
+    //                 text: 'Vui lòng thử lại sau!',
+    //             });
+    //         }
+    //     }
+    // };
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         if (isValidated()) {
             try {
                 const response = await axios.get(`http://localhost:3001/accounts`);
-
+                console.log(response.data); // Log response to check the data
+    
                 if (response.status === 200) {
                     const account = response.data.find(
                         (acc) =>
-                            acc.username.toUpperCase() === username.toUpperCase() &&
+                            acc.username.toLowerCase() === username.toLowerCase() &&
                             acc.password === password
                     );
-
+    
                     if (account) {
                         Swal.fire({
                             title: 'Đăng nhập thành công!',
@@ -46,7 +92,7 @@ const LoginForm = () => {
                             title: 'Đăng nhập thất bại',
                             text: 'Mã số sinh viên hoặc mật khẩu không chính xác!',
                         }).then(() => {
-                            navigate('/labtrack/login');
+                            navigate('/hextech/login');
                         });
                     }
                 }
@@ -60,6 +106,7 @@ const LoginForm = () => {
             }
         }
     };
+    
 
     return (
         <div
@@ -76,7 +123,7 @@ const LoginForm = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
                                     <label htmlFor="input-username" className="form-label">
-                                        Nhập mã số sinh viên
+                                        Nhập username:
                                     </label>
                                     <input
                                         type="text"
@@ -91,7 +138,7 @@ const LoginForm = () => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="input-password" className="form-label">
-                                        Nhập mật khẩu
+                                        Nhập mật khẩu:
                                     </label>
                                     <input
                                         type="password"

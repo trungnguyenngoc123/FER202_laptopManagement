@@ -65,7 +65,7 @@ export const AddProductForm = () => {
                     icon: 'success',
                 }).then(() => {
                     dispatch(reset());
-                    navigate('/labtrack/products');
+                    navigate('/hextech/products');
                 });
             }
         } catch (error) {
